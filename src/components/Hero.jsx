@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
-import heroVideo from "../assets/video/hero-video4.mp4";
+import heroVideo from "../assets/video/hero-video.mp4";
 import "./Hero.css";
 const Hero = () => {
   const [isMuted, setIsMuted] = useState(true);

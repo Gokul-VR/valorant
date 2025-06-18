@@ -42,7 +42,7 @@ const agentsData = [
   { name: "Sky", image: sky, role: "INITIATOR", roleIcon: initiatorIcon },
   { name: "Yoru", image: yoru, role: "DUELIST", roleIcon: duelistIcon },
   { name: "Neon", image: neon, role: "DUELIST", roleIcon: duelistIcon },
-  { name: "ISO", image: iso, role: "DUELIST", roleIcon: duelistIcon },
+  // { name: "ISO", image: iso, role: "DUELIST", roleIcon: duelistIcon },
   { name: "Chamber", image: chamber, role: "SENTINEL", roleIcon: sentinelIcon },
   { name: "Gekko", image: gekko, role: "INITIATOR", roleIcon: initiatorIcon },
   {
