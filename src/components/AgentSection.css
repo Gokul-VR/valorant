@@ -1,0 +1,121 @@
+/* --- AGENTS SECTION --- */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.agents-section {
+  padding: 100px 0;
+  background-color: var(--valorant-dark);
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 50px;
+  color: var(--valorant-red);
+}
+
+.agents-grid {
+  display: flex !important; /* required by Swiper */
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+.agent-card {
+  position: relative;
+  height: 450px;
+  width: 100%;
+  max-width: 350px;
+  overflow: hidden;
+  cursor: pointer;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 90% 100%, 0 100%);
+}
+
+.agent-card-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at 50% 100%,
+    var(--valorant-red) 0%,
+    var(--valorant-dark) 70%
+  );
+  transition: transform 0.6s ease;
+  z-index: 0;
+}
+
+.agent-card:hover .agent-card-bg {
+  transform: scale(1.1);
+}
+
+.agent-portrait {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  transition: bottom 0.5s ease;
+  z-index: 1;
+}
+
+.agent-portrait img {
+  width: 100%;
+  filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.5));
+}
+
+.agent-card:hover .agent-portrait {
+  bottom: 0;
+}
+
+.agent-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem;
+  background: linear-gradient(to top, rgba(17, 17, 17, 0.9), transparent);
+  color: var(--valorant-offwhite);
+  transform: translateY(100%);
+  transition: transform 0.5s ease;
+  z-index: 2;
+}
+
+.agent-card:hover .agent-info {
+  transform: translateY(0);
+}
+
+.agent-name {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+
+.agent-role {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.agent-role img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.agent-role span {
+  font-weight: 700;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 50px;
+  color: var(--valorant-red);
+}
