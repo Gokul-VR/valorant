@@ -31,11 +31,6 @@ html.lenis {
   overflow: hidden;
   height: 100%;
 }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 body {
   font-family: var(--font-body);
@@ -193,7 +188,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #000;
+  background-color: var(--valorant-dark);
   z-index: 999;
   padding: 2rem;
   display: flex;
@@ -316,7 +311,11 @@ body {
   font-size: 0.8rem;
   color: #555;
 }
-
+@media screen and (max-width: 768px) {
+  .we-are-valorant {
+    padding: 50px 0;
+  }
+}
 /* Swiper styles */
 .swiper {
   width: 100%;

@@ -120,7 +120,6 @@ const Hero = () => {
           className="hero-logo"
           ref={heroLogoRef}
         />
-
         <button className="btn" ref={ctaButtonRef}>
           <span className="btn__inner">
             <span className="btn__slide"></span>

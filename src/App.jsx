@@ -7,6 +7,7 @@ import AgentsSection from "./components/AgentsSection";
 import ValorantSection from "./components/ValorantSection";
 import Footer from "./components/Footer";
 import "./App.css";
+import Agents from "./components/Agents";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -35,7 +36,8 @@ function App() {
           <Header />
           <main>
             <Hero />
-            <AgentsSection />
+            <Agents/>
+            {/* <AgentsSection /> */}
             <ValorantSection />
           </main>
           <Footer />
