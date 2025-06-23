@@ -111,7 +111,7 @@ const ValorantButton = ({
 }) => {
   // Base classes that are common to both variants
   const baseClasses =
-    "group relative p-2 font-body uppercase font-bold text-sm cursor-pointer border-none bg-transparent transition-all duration-150 ease-in-out focus:outline-none active:outline-none";
+    "group relative p-[3px] font-body uppercase font-bold text-sm cursor-pointer border-none bg-transparent transition-all duration-150 ease-in-out focus:outline-none active:outline-none";
 
   // Classes for the outer border pseudo-elements
   const borderClasses = `
@@ -141,11 +141,16 @@ const ValorantButton = ({
       {...props}
     >
       <span
+        // className={`
+        //   relative block py-5.5 px-[80px] overflow-hidden shadow-inner
+        //   ${variantClasses[variant].inner}
+        //   ${variantClasses[variant].bits}
+        //   after:content-[''] after:block after:absolute after:bottom-0 after:right-0 after:w-1 after:h-1 after:transition-all after:duration-200 after:ease-in-out
+        // `}
         className={`
           relative block py-5.5 px-[80px] overflow-hidden shadow-inner
           ${variantClasses[variant].inner}
-          ${variantClasses[variant].bits}
-          after:content-[''] after:block after:absolute after:bottom-0 after:right-0 after:w-1 after:h-1 after:transition-all after:duration-200 after:ease-in-out
+         
         `}
       >
         {/* The sliding highlight effect */}

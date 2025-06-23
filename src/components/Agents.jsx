@@ -197,7 +197,7 @@ const AgentsSection = () => {
           end: "bottom top",
           scrub: true,
         },
-        y: -50,
+        y: 50,
       });
     }, sectionRef);
 
@@ -215,7 +215,7 @@ const AgentsSection = () => {
             ref={agent2Ref}
             src={agent2}
             alt="Agent 1"
-            className="max-h-[350px] md:max-h-[500px] mt-15 md:mt-40 object-contain z-10"
+            className="max-h-[350px] md:max-h-[500px] -mt-4 md:mt-8 object-contain z-10"
           />
           <img
             ref={agent1Ref}
@@ -244,7 +244,7 @@ const AgentsSection = () => {
             highlight reels will look the same.
           </p>
 
-          <ValorantButton variant="red">PLAY NOW</ValorantButton>
+          <ValorantButton variant="white">VIEW AGENTS</ValorantButton>
         </div>
       </div>
     </section>
