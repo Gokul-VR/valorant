@@ -153,8 +153,6 @@ const AgentsSection = () => {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 90%",
-          // You might want to remove "end" if you just want it to trigger once
-          // or set a more specific end point.
         },
         yPercent: 100, // Start lines 100% below their final position
         opacity: 0,

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import heroVideo from "../assets/video/hero-video.mp4";
 import "./Hero.css";
+import ValorantButton from "./ValorantButton";
 const Hero = () => {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef(null);
@@ -120,12 +121,14 @@ const Hero = () => {
           className="hero-logo"
           ref={heroLogoRef}
         />
-        <button className="btn" ref={ctaButtonRef}>
+        {/* <button className="btn" ref={ctaButtonRef}>
           <span className="btn__inner">
             <span className="btn__slide"></span>
             <span className="btn__content">PLAY NOW</span>
           </span>
-        </button>
+        </button> */}
+        <ValorantButton variant="red">PLAY NOW</ValorantButton>
+
       </div>
 
       <div

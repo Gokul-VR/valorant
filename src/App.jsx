@@ -8,9 +8,12 @@ import ValorantSection from "./components/ValorantSection";
 import Footer from "./components/Footer";
 import "./App.css";
 import Agents from "./components/Agents";
+import ContentSection from "./components/Content";
+import Map from "./components/Map";
+import News from "./components/News";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   // Initialize Lenis smooth scrolling
   useLenis();
@@ -36,8 +39,11 @@ function App() {
           <Header />
           <main>
             <Hero />
-            <Agents/>
+            <News />
+            <ContentSection />
+            <Agents />
             {/* <AgentsSection /> */}
+            <Map />
             <ValorantSection />
           </main>
           <Footer />

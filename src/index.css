@@ -12,7 +12,7 @@
   --valorant-red: #ff4655;
   --valorant-dark: #111111;
   --valorant-offwhite: #ece8e1;
-  --valorant-grey: #363636;
+  --valorant-grey: #7d8082;
   --font-heading: "Anton", sans-serif;
   --font-body: "Roboto", sans-serif;
 
@@ -88,14 +88,13 @@ body {
   width: 100%;
   padding: 1rem 1rem;
   z-index: 100;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);
+  /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent); */
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -262,9 +261,9 @@ body {
   .menu-icon {
     display: flex;
   }
-  .nav-logo {
+  /* .nav-logo {
     margin-left: -20px;
-  }
+  } */
 }
 
 /* --- WE ARE VALORANT SECTION --- */
@@ -277,7 +276,7 @@ body {
 
 .valorant-text-bg {
   position: absolute;
-  top: 57%;
+  top: 69%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 25vw;
@@ -302,20 +301,103 @@ body {
   font-size: 1.1rem;
   font-weight: 300;
 }
+@media screen and (max-width: 768px) {
+  .we-are-valorant {
+    padding: 120px 0;
+  }
+  .valorant-text-bg {
+    top: 59%;
+  }
+  .we-are-valorant .section-title {
+    font-size: 1.9rem;
+  }
 
+  .we-are-valorant p {
+    line-height: 1.6;
+    font-size: 1rem;
+    font-weight: 300;
+    margin-top: -20px;
+  }
+}
 /* --- FOOTER --- */
-.footer {
+/* .footer {
   padding: 2rem;
   text-align: center;
   background-color: #0a0a0a;
   font-size: 0.8rem;
   color: #555;
+} */
+.footer {
+  padding: 1rem;
+  font-size: 0.8rem;
+  color: #555;
+  /* Flexbox to space out the main sections */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-@media screen and (max-width: 768px) {
-  .we-are-valorant {
-    padding: 50px 0;
+
+/* --- Left Side: Logo and Copyright Text --- */
+.footer-content {
+  /* Use flex to place logo and text side-by-side */
+  display: flex;
+  align-items: center;
+}
+
+/* Make sure the Riot logo doesn't shrink */
+.footer-logo-link {
+  flex-shrink: 0;
+}
+
+.footer-content p {
+  max-width: 500px; /* Prevents text from getting too long */
+  text-align: left;
+}
+
+/* --- Right Side: Social Media Icons --- */
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* Space between icons */
+}
+
+.social-links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #282828;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.social-links a:hover {
+  background-color: #404040;
+}
+
+@media (max-width: 900px) {
+  .footer {
+    /* Stack all content vertically and center it */
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .footer-content {
+    /* Also stack the logo and text vertically */
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .footer-content p {
+    /* Center the copyright text */
+    text-align: center;
   }
 }
+
 /* Swiper styles */
 .swiper {
   width: 100%;
@@ -349,4 +431,20 @@ body {
 /* No scroll class */
 .no-scroll {
   overflow: hidden;
+}
+/* Custom styles for the Swiper progress bar */
+
+/* This targets the container we created */
+.swiper-custom-pagination.swiper-pagination-progressbar {
+  /* Set the track color */
+  background: var(--valorant-grey);
+  height: 3px;
+  border-radius: 3px;
+}
+
+/* This targets the filled part of the progress bar */
+.swiper-custom-pagination .swiper-pagination-progressbar-fill {
+  /* Set the fill color to match your theme */
+  background: var(--valorant-red); /* red-500 */
+  border-radius: 3px;
 }

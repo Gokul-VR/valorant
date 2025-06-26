@@ -117,8 +117,7 @@ const ValorantButton = ({
   const borderClasses = `
     before:content-[''] before:block before:absolute before:top-0 before:left-0 before:right-0 before:h-[calc(50%-5px)] before:border before:border-valorant-grey before:border-b-0 before:transition-all before:duration-150 before:ease-in-out
     after:content-[''] after:block after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[calc(50%-5px)] after:border after:border-valorant-grey after:border-t-0 after:transition-all after:duration-150 after:ease-in-out
-    active:before:top-1 active:before:left-1 active:before:right-1
-    active:after:bottom-1 active:after:left-1 active:after:right-1
+   
   `;
 
   // Variant-specific classes

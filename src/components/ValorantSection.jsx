@@ -10,6 +10,7 @@ const ValorantSection = () => {
   const sectionTitleRef = useRef(null);
   const sectionParagraphRef = useRef(null);
   const valorantTextBgRef = useRef(null);
+  const buttonRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -34,8 +35,16 @@ const ValorantSection = () => {
         duration: 1,
         delay: 0.2,
       });
-
-      // Parallax for the background text "VALORANT"
+      gsap.from(buttonRef.current, {
+        scrollTrigger: {
+          trigger: valorantSectionRef.current,
+          start: "top 60%",
+        },
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        delay: 0.3,
+      });
       gsap.to(valorantTextBgRef.current, {
         scrollTrigger: {
           trigger: valorantSectionRef.current,
@@ -52,7 +61,7 @@ const ValorantSection = () => {
 
   return (
     <section className="we-are-valorant" ref={valorantSectionRef}>
-      <div className="container">
+      <div className="">
         <div className="valorant-text-bg" ref={valorantTextBgRef}>
           VALORANT
         </div>
@@ -63,6 +72,9 @@ const ValorantSection = () => {
           This is more than just a shooter. It's a test of creativity, clutch
           plays, and strategy. Outwit, outplay, and outshine your competition.
         </p>
+        <button ref={buttonRef} className="font-semibold text-sm relative cursor-pointer text-center hover:bg-[gray]/40 px-4 py-2 rounded-[8px] uppercase mt-4 tracking-wider">
+          DOWNLOAD RIOT MOBILE COMPANION APP
+        </button>
       </div>
     </section>
   );

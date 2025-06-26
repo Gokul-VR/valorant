@@ -51,12 +51,56 @@ const Header = () => {
   const handleCloseClick = () => {
     if (isOpen) closeSidebar();
   };
+  const [isNavVisible, setIsNavVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const navContainerRef = useRef(null);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY || window.pageYOffset;
+
+      if (currentScrollY === 0) {
+        // Topmost position: show navbar without floating styles
+        setIsNavVisible(true);
+        navContainerRef.current.style.background = 'transparent';
+        navContainerRef.current.style.borderRadius = '0';
+        // navContainerRef.current.style.border = 'none';
+      } else if (currentScrollY > lastScrollY) {
+        // Scrolling down: hide navbar
+        setIsNavVisible(false);
+      } else if (currentScrollY < lastScrollY) {
+        // Scrolling up: show navbar with floating styles
+        setIsNavVisible(true);
+        navContainerRef.current.style.background = 'var(--valorant-dark)';
+        navContainerRef.current.style.borderRadius = '0.5rem';
+        // navContainerRef.current.style.border = '1px solid rgba(255, 255, 255, 0.1)';
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
+  useEffect(() => {
+    gsap.to(navContainerRef.current, {
+      y: isNavVisible ? 0 : -100,
+      opacity: isNavVisible ? 1 : 0,
+      duration: 0.5,
+    });
+  }, [isNavVisible]);
   return (
     <header className="header">
-      <nav className="navbar">
+      <nav className="navbar" ref={navContainerRef}
+        style={{
+          width: "100%",
+          padding: "10px",
+          transition: 'background 0.3s ease, border-radius 0.3s ease, border 0.3s ease'
+        }}>
         <a href="#" className="nav-logo">
-          <img src={logo} alt="logo" width="80px" />
+          {/* <img src={logo} alt="logo" width="80px" /> */}
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" height="35" viewBox="0 0 100 100" width="35"><path d="M99.25 48.66V10.28c0-.59-.75-.86-1.12-.39l-41.92 52.4a.627.627 0 00.49 1.02h30.29c.82 0 1.59-.37 2.1-1.01l9.57-11.96c.38-.48.59-1.07.59-1.68zM1.17 50.34L32.66 89.7c.51.64 1.28 1.01 2.1 1.01h30.29c.53 0 .82-.61.49-1.02L1.7 9.89c-.37-.46-1.12-.2-1.12.39v38.38c0 .61.21 1.2.59 1.68z" fill="#fff"></path></svg>
         </a>
 
         <ul className="nav-menu">
